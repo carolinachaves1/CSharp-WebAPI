@@ -7,6 +7,7 @@ Exercícios desenvolvidos durante o curso "Curso Web API .NET Core Essencial" di
 ## :computer: Projeto Catálogo
 
 **Escopo**
+
 Criar uma WebAPI para um catálogo de produtos/categorias que pode atender uma rede de lojas ou supermercados.
 
 * Permitir que outros aplicativos gerenciem o catálogo de produtos e categorias
