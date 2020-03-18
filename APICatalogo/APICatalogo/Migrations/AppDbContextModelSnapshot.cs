@@ -55,6 +55,8 @@ namespace APICatalogo.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DataCadastro")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Descricao")
@@ -62,8 +64,8 @@ namespace APICatalogo.Migrations
                         .HasColumnType("nvarchar(300)")
                         .HasMaxLength(300);
 
-                    b.Property<float>("Estoque")
-                        .HasColumnType("real");
+                    b.Property<int>("Estoque")
+                        .HasColumnType("int");
 
                     b.Property<string>("ImagemUrl")
                         .IsRequired()

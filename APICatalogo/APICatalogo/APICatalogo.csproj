@@ -5,19 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20200318132607_Inicial.cs" />
-    <Compile Remove="Migrations\20200318132607_Inicial.Designer.cs" />
-    <Compile Remove="Migrations\20200318133253_Inicial.cs" />
-    <Compile Remove="Migrations\20200318133253_Inicial.Designer.cs" />
-    <Compile Remove="Migrations\20200318133325_ProdutoCategoria.cs" />
-    <Compile Remove="Migrations\20200318133325_ProdutoCategoria.Designer.cs" />
-    <Compile Remove="Migrations\20200318133411_ProdutoCategoria.cs" />
-    <Compile Remove="Migrations\20200318133411_ProdutoCategoria.Designer.cs" />
-    <Compile Remove="Migrations\20200318133653_ProdutoCategoria.cs" />
-    <Compile Remove="Migrations\20200318133653_ProdutoCategoria.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Controllers\" />
   </ItemGroup>
 

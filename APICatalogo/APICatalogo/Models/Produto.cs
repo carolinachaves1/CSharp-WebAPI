@@ -11,6 +11,7 @@ namespace APICatalogo.Models
     public class Produto
     { 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProdutoId { get; set; }
 
         [Required]
@@ -29,7 +30,9 @@ namespace APICatalogo.Models
         [MaxLength(500)]
         public string ImagemUrl { get; set; }
 
-        public float Estoque { get; set; }
+        public int Estoque { get; set; }
+
+        [Timestamp]
         public DateTime DataCadastro { get; set; }
 
         //Propriedade de naveção

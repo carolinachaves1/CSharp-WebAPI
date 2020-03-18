@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APICatalogo.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200318134952_ProdutoCategoria")]
-    partial class ProdutoCategoria
+    [Migration("20200318162443_CategoriaProduto")]
+    partial class CategoriaProduto
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -57,6 +57,8 @@ namespace APICatalogo.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DataCadastro")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Descricao")
@@ -64,8 +66,8 @@ namespace APICatalogo.Migrations
                         .HasColumnType("nvarchar(300)")
                         .HasMaxLength(300);
 
-                    b.Property<float>("Estoque")
-                        .HasColumnType("real");
+                    b.Property<int>("Estoque")
+                        .HasColumnType("int");
 
                     b.Property<string>("ImagemUrl")
                         .IsRequired()
