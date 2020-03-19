@@ -1,6 +1,9 @@
 
 using EFCoreCodeFirstSample_CodeMazedotCom.Entities;
 using EFCoreCodeFirstSample_CodeMazedotCom.Extensions;
+using EFCoreCodeFirstSample_CodeMazedotCom.Models;
+using EFCoreCodeFirstSample_CodeMazedotCom.Models.DataManager;
+using EFCoreCodeFirstSample_CodeMazedotCom.Models.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -29,6 +32,7 @@ namespace EFCoreCodeFirstSample_CodeMazedotCom
 
             services.AddDbContext<EmployeeContext>(opts =>
                 opts.UseSqlServer(Configuration["ConnectionString:EmployeeDB"]));
+            services.AddScoped<IDataRepository<Employee>, EmployeeManager>();
 
 
             services.AddControllers();
