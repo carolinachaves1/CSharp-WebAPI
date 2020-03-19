@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APICatalogo.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200318162443_CategoriaProduto")]
-    partial class CategoriaProduto
+    [Migration("20200318213256_ProdutoCategoria")]
+    partial class ProdutoCategoria
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,14 +50,10 @@ namespace APICatalogo.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoraId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("CategoriaId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DataCadastro")
-                        .IsConcurrencyToken()
+                    b.Property<DateTime?>("CreatedAt")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime2");
 

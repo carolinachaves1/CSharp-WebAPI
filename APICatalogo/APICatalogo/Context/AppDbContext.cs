@@ -8,13 +8,15 @@ namespace APICatalogo.Context
 {
     public class AppDbContext : DbContext
     {
-        //cria contexto
+   
+        //mapeamento das entidades
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+
+        //criar contexto para depois registrar como serviço
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
         }
-        //mapeamento das entidades
-        public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Produto> Produtos { get; set; }
     }
 }

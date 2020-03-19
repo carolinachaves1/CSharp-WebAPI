@@ -32,11 +32,11 @@ namespace APICatalogo.Models
 
         public int Estoque { get; set; }
 
-        [Timestamp]
-        public DateTime DataCadastro { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime? CreatedAt { get; set; }
 
         //Propriedade de naveção
         public Categoria Categoria { get; set; }
-        public int CategoraId { get; set; }
+        //public int CategoraId { get; set; }
     }
 }

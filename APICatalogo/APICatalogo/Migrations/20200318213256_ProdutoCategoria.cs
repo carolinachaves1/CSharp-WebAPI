@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace APICatalogo.Migrations
 {
-    public partial class CategoriaProduto : Migration
+    public partial class ProdutoCategoria : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,9 +32,8 @@ namespace APICatalogo.Migrations
                     Preco = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
                     ImagemUrl = table.Column<string>(maxLength: 500, nullable: false),
                     Estoque = table.Column<int>(nullable: false),
-                    DataCadastro = table.Column<DateTime>(nullable: false),
-                    CategoriaId = table.Column<int>(nullable: true),
-                    CategoraId = table.Column<int>(nullable: false)
+                    CreatedAt = table.Column<DateTime>(nullable: true),
+                    CategoriaId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {

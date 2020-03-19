@@ -17,6 +17,7 @@ namespace APICatalogo.Models
             Produtos = new Collection<Produto>();
         }
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CategoriaId { get; set; }
 
         [Required] //atributo da DataAnnotations
@@ -27,7 +28,7 @@ namespace APICatalogo.Models
         [MaxLength(300)]
         public string ImagemUrl { get; set; }
 
-        //propriedade de naveção
+        //propriedade de naveção - Uma categoria possui uma coleção de produtos
         public ICollection<Produto> Produtos { get; set;  }
 
     }

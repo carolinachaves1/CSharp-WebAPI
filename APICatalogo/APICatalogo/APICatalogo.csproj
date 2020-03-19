@@ -5,6 +5,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200318162443_CategoriaProduto.cs" />
+    <Compile Remove="Migrations\20200318162443_CategoriaProduto.Designer.cs" />
+    <Compile Remove="Migrations\20200318164003_Populadb.cs" />
+    <Compile Remove="Migrations\20200318164003_Populadb.Designer.cs" />
+    <Compile Remove="Migrations\20200318170902_CategoriaProduto.cs" />
+    <Compile Remove="Migrations\20200318170902_CategoriaProduto.Designer.cs" />
+    <Compile Remove="Migrations\20200318173219_ProdutoCategoria.cs" />
+    <Compile Remove="Migrations\20200318173219_ProdutoCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20200318202323_ProdutoCategoria.cs" />
+    <Compile Remove="Migrations\20200318202323_ProdutoCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20200318202944_PopulaDB.cs" />
+    <Compile Remove="Migrations\20200318202944_PopulaDB.Designer.cs" />
+    <Compile Remove="Migrations\20200318205651_ProdutoCategoria.cs" />
+    <Compile Remove="Migrations\20200318205651_ProdutoCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20200318205845_PopulaDB.cs" />
+    <Compile Remove="Migrations\20200318205845_PopulaDB.Designer.cs" />
+    <Compile Remove="Migrations\20200318211035_ProdutoCategoria.cs" />
+    <Compile Remove="Migrations\20200318211035_ProdutoCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20200318212536_ProdutoCategoria.cs" />
+    <Compile Remove="Migrations\20200318212536_ProdutoCategoria.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Controllers\" />
   </ItemGroup>
 
