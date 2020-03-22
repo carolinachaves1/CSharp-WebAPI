@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace BeerAPI.Models
 {
@@ -28,11 +25,11 @@ namespace BeerAPI.Models
         public DateTime updated_at { get; set; }
 
         public Brewery Brewery { get; set; }
-        public int BreweryId { get; set; }
+        public Guid BreweryId { get; set; }
 
 
         public Style StyleName { get; set; }
-        public int StyleId { get; set; }
+        public Guid StyleId { get; set; }
 
 
 

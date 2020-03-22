@@ -1,8 +1,10 @@
 
+using BeerAPI.Entities;
 using BeerAPI.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,9 @@ namespace BeerAPI
             services.ConfigureCors();
             services.ConfigureIISIntegration();
 
+            services.AddDbContext<ApplicationContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("sqlConnection")));
+
             services.AddControllers();
         }
 
@@ -36,8 +41,8 @@ namespace BeerAPI
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
+            app.UseStaticFiles();
             app.UseCors("CorsPolicy");
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
