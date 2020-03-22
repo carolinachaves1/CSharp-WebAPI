@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace EFCoreCodeFirstSample_CodeMazedotCom.Controllers
 {
+
     [Route("api/employee")]
     [ApiController]
     public class EmployeeController : ControllerBase
@@ -18,14 +19,19 @@ namespace EFCoreCodeFirstSample_CodeMazedotCom.Controllers
         {
             _dataRepository = dataRepository;
         }
-
+        /// <summary>
+        /// Return all employee.
+        /// </summary>
         [HttpGet]
         public IActionResult Get()
         {
             IEnumerable<Employee> employees = _dataRepository.GetAll();
             return Ok(employees);
         }
-
+        /// <summary>
+        /// Find employee by ID.
+        /// </summary>
+        /// <param name="id"></param>
         [HttpGet("{id}", Name = "Get")]
         public IActionResult Get(long id)
         {
@@ -39,6 +45,9 @@ namespace EFCoreCodeFirstSample_CodeMazedotCom.Controllers
             return Ok(employee);
         }
 
+        /// <summary>
+        /// Creates a employee.
+        /// </summary>
         [HttpPost]
         public IActionResult Post([FromBody] Employee employee)
         {
@@ -52,7 +61,10 @@ namespace EFCoreCodeFirstSample_CodeMazedotCom.Controllers
                 "Get",
                 new { Id = employee.EmployeeId }, employee);
         }
-
+        /// <summary>
+        /// Update an employee
+        /// </summary>
+        /// //<param name="id"></param>
         [HttpPut("{id}")]
         public IActionResult Put(long id, [FromBody] Employee employee)
         {
@@ -72,7 +84,10 @@ namespace EFCoreCodeFirstSample_CodeMazedotCom.Controllers
 
             return NoContent();
         }
-
+        /// <summary>
+        /// Deletes a specific employee.
+        /// </summary>
+        /// <param name="id"></param> 
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {

@@ -11,6 +11,8 @@ namespace EFCoreCodeFirstSample_CodeMazedotCom.Models.DataManager
     {
         readonly EmployeeContext _employeeContext;
 
+        public static string BaseDirectory { get; set; }
+
         public EmployeeManager(EmployeeContext context)
         {
             _employeeContext = context;

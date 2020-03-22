@@ -11,12 +11,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Microsoft.OpenApi.Models;
 
 namespace EFCoreCodeFirstSample_CodeMazedotCom
 {
     public class Startup
     {
+        private string BaseDirectory;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,6 +36,21 @@ namespace EFCoreCodeFirstSample_CodeMazedotCom
                 opts.UseSqlServer(Configuration["ConnectionString:EmployeeDB"]));
             services.AddScoped<IDataRepository<Employee>, EmployeeManager>();
 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc(
+                    "v1",
+                    new OpenApiInfo
+                    {
+                        Version = "V1.1.0",
+                        Title = "Employee API"
+                    });
+
+                //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                //var baseDirectory = "C:/Users/cchaves/source/repos/carolinachaves1/CSharp-WebAPI/New folder/EFCoreCodeFirstSample-CodeMazedotCom/bin/Debug/netcoreapp3.1/";
+                //var xmlPath = Path.Combine(baseDirectory, xmlFile); ;
+                //c.IncludeXmlComments(xmlPath);
+            });
 
             services.AddControllers();
         }
@@ -52,6 +69,7 @@ namespace EFCoreCodeFirstSample_CodeMazedotCom
 
             app.UseCors("CorsPolicy");
 
+
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.All
@@ -64,6 +82,13 @@ namespace EFCoreCodeFirstSample_CodeMazedotCom
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Doc");
             });
         }
     }

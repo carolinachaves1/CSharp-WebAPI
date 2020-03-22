@@ -11,6 +11,7 @@ namespace EFCoreCodeFirstSample_CodeMazedotCom.Entities
 
         }
 
+        public static string BaseDirectory { get; set; }
         public DbSet<Employee> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
