@@ -12,12 +12,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace EFCoreCodeFirstSample_CodeMazedotCom
 {
     public class Startup
     {
-        private string BaseDirectory;
 
         public Startup(IConfiguration configuration)
         {
@@ -46,10 +48,10 @@ namespace EFCoreCodeFirstSample_CodeMazedotCom
                         Title = "Employee API"
                     });
 
-                //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                //var baseDirectory = "C:/Users/cchaves/source/repos/carolinachaves1/CSharp-WebAPI/New folder/EFCoreCodeFirstSample-CodeMazedotCom/bin/Debug/netcoreapp3.1/";
-                //var xmlPath = Path.Combine(baseDirectory, xmlFile); ;
-                //c.IncludeXmlComments(xmlPath);
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
+                c.IncludeXmlComments(xmlPath);
             });
 
             services.AddControllers();

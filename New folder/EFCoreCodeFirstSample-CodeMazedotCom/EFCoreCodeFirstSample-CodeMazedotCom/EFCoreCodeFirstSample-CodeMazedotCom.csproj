@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,9 +6,20 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DocumentationFile>C:\Users\cchaves\source\repos\carolinachaves1\CSharp-WebAPI\New folder\EFCoreCodeFirstSample-CodeMazedotCom\EFCoreCodeFirstSample-CodeMazedotCom\EFCoreCodeFirstSample-CodeMazedotCom.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Migrations\20200319132211_EFCoreCodeFirstSample.Models.AddEmployeeGender.cs" />
     <Compile Remove="Migrations\20200319132211_EFCoreCodeFirstSample.Models.AddEmployeeGender.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
   <ItemGroup>

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace EFCoreCodeFirstSample_CodeMazedotCom.Models
 {
+    ///<Summary>
+    /// Gets the answer
+    ///</Summary>
     public class Employee
     {
         [Key]

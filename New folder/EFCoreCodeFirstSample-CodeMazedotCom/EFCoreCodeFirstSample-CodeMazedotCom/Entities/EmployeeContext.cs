@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EFCoreCodeFirstSample_CodeMazedotCom.Entities
 {
+
     public class EmployeeContext : DbContext
     {
         public EmployeeContext(DbContextOptions options) : base(options)

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EFCoreCodeFirstSample-CodeMazedotCom</name>
+    </assembly>
+    <members>
+        <member name="M:EFCoreCodeFirstSample_CodeMazedotCom.Controllers.EmployeeController.Get">
+            <summary>
+            Return all employee.
+            </summary>
+        </member>
+        <member name="M:EFCoreCodeFirstSample_CodeMazedotCom.Controllers.EmployeeController.Get(System.Int64)">
+            <summary>
+            Find employee by ID.
+            </summary>
+            <param name="id"></param>
+            <returns>Status 200 and a employee</returns>
+        </member>
+        <member name="M:EFCoreCodeFirstSample_CodeMazedotCom.Controllers.EmployeeController.Post(EFCoreCodeFirstSample_CodeMazedotCom.Models.Employee)">
+            <summary>
+            Creates a employee.
+            </summary>
+        </member>
+        <member name="M:EFCoreCodeFirstSample_CodeMazedotCom.Controllers.EmployeeController.Put(System.Int64,EFCoreCodeFirstSample_CodeMazedotCom.Models.Employee)">
+            <summary>
+            Update an employee
+            </summary>
+            //<param name="id"></param>
+            <param name="employee"></param>
+        </member>
+        <member name="M:EFCoreCodeFirstSample_CodeMazedotCom.Controllers.EmployeeController.Delete(System.Int64)">
+            <summary>
+            Deletes a specific employee.
+            </summary>
+            <param name="id"></param> 
+        </member>
+        <member name="T:EFCoreCodeFirstSample_CodeMazedotCom.Models.Employee">
+            <Summary>
+             Gets the answer
+            </Summary>
+        </member>
+    </members>
+</doc>
